@@ -16,7 +16,7 @@ function setupGrid(size) {
     for (let i = 0; i < total; i++){
         let square = document.createElement('div');
         square.classList.add("pixel");
-        grid.style.backgroundColor = 'blue';
+        grid.style.backgroundColor = 'white';
         grid.appendChild(square);
     }
 
@@ -30,12 +30,12 @@ function changeSize(){
     setupGrid(size);
 }
 
-// 3. Create functions for random color / rainbow color button
+// 5. Create a function to change the pixel background color
 function changeColor() {
     let pixels = document.querySelectorAll('.pixel');
     
-    pixels.forEach(pixel => pixel.addEventListener('mousedown', () => {
-        if (currentColor === 'red') {
+    pixels.forEach(pixel => pixel.addEventListener('mouseover', () => {
+        if (currentColor === 'random') {
             getRandomColor();
             pixel.style.backgroundColor = randomColor;
         }
@@ -47,6 +47,7 @@ function changeColor() {
     );
 }
 
+// 4. Create a function to retrieve random colour
 function getRandomColor() {
     let letters = '0123456789ABCDEF';
     randomColor = '#';
@@ -56,14 +57,22 @@ function getRandomColor() {
     return randomColor;
   }
 
-// 4. Create function for changing color 
+// 3. Create function for changing color 
 
 function selectColor(color){
     currentColor = color;
 }
 
-
 // 5. Function to reset the game board
+
+function resetGrid() {
+    let reset = document.getElementById('reset');
+    reset.addEventListener('click', () => {
+        window.location.reload();
+    });
+}
+
+setupGrid(16);
 
 // 6. Event listeners for mousedown and click to start/stop drawing
 
