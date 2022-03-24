@@ -19,8 +19,6 @@ function setupGrid(size) {
         grid.style.backgroundColor = 'white';
         grid.appendChild(square);
     }
-
-    changeColor();
 }
 
 // 2. Create function to take input from HTML for size / change sizes of grid
@@ -61,6 +59,7 @@ function getRandomColor() {
 
 function selectColor(color){
     currentColor = color;
+    changeColor();
 }
 
 // 5. Function to reset the game board
