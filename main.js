@@ -4,7 +4,7 @@
 // - Create each div element via DOM then append to grid
 // - Place into Function
 const grid = document.querySelector('.grid-squares');
-let currentColor = "black";
+let currentColor = "white";
 let randomColor = "red";
 
 function setupGrid(size) {
@@ -24,8 +24,17 @@ function setupGrid(size) {
 // 2. Create function to take input from HTML for size / change sizes of grid
 
 function changeSize(){
-    let size = document.querySelector('input').value;
-    setupGrid(size);
+    let removeGrid = grid.querySelectorAll('div');
+    removeGrid.forEach((gridDiv) => gridDiv.remove());
+
+    if (parseInt(choice.value) >= 2 && parseInt(choice.value) <= 100) {
+        let size = document.querySelector('input').value;
+        setupGrid(size);    
+    }
+    else {
+        alert("SUCCESS");
+    }
+  
 }
 
 // 5. Create a function to change the pixel background color
@@ -71,7 +80,4 @@ function resetGrid() {
     });
 }
 
-setupGrid(16);
-
-// 6. Event listeners for mousedown and click to start/stop drawing
 
