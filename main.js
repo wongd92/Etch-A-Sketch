@@ -3,8 +3,26 @@
 // - Look-up CSS Grid/Grid Template JS
 // - Create each div element via DOM then append to grid
 // - Place into Function
+const grid = document.querySelector('.grid-squares');
+
+function setupGrid(size) {
+    grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+
+    for (let i = 0; i < size * size; i++){
+        let square = document.createElement('div');
+        grid.style.backgroundColor = 'blue';
+        grid.appendChild(square);
+    }
+}
 
 // 2. Create function to take input from HTML for size / change sizes of grid
+
+function changeSize(){
+    let size = document.querySelector('input').value;
+    setupGrid(size);
+}
+
 
 // 3. Create functions for random color / rainbow color button
 
