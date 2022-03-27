@@ -11,19 +11,29 @@
 <body>
     <!-- -->
     <div class="grid-container">
-        <div class="title"><h1></h1></div>
         <div class="grid">
-            <div class="grid-squares"></div>
-            <div class="buttons">
+            <div class="grid-squares">
+                <p class="instructions">
+                    1. Type in grid size below and hit Enter<br>
+                    2. Select between Black or Rainbow for colors<br>
+                    3. Hover over grid area to draw<br>
+                    4. Select erase for individual erasing or clear to start again<br>
+                </p>
+            </div> 
+            <div class="title"><h1>ETCH-A-SKETCH</h1></div>
+            <div class="color-buttons">
                 <button id="black" onclick="selectColor('black')">Black</button>
-                <button onclick="selectColor('random')">Rainbow</button>
-                <button onclick="selectColor('white')">Erase</button>
+                <button id="rainbow" onclick="selectColor('random')">Rainbow</button>
+            </div>
+            <div class="erase-buttons">
+                <button id="erase" onclick="selectColor('white')">Erase</button>
                 <button id="reset" onclick="resetGrid()">Clear</button>
             </div>
-            <div>
-                <input type="text" placeholder="Enter Grid Size (Max 100x100)" id="choice"/>
-                <button onclick="changeSize()" class="size">Enter</button>
+            <div class="input-buttons">
+                <input id="choice" type="text" placeholder="Enter Grid Size (Max 100x100)"/>
+                <button id="select" onclick="changeSize()">Enter</button>
             </div>
+            <span class="error">Error! Grid must be larger than 2x2 and smaller than 100x100</span>
         </div>
     </div>
     

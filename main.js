@@ -24,15 +24,21 @@ function setupGrid(size) {
 // 2. Create function to take input from HTML for size / change sizes of grid
 
 function changeSize(){
+    let choice = document.getElementById('choice');
+    let instructions = document.querySelector('.instructions');
+    let errorMsg = document.querySelector('.error');
+    choice = Number(choice.value);
+
     let removeGrid = grid.querySelectorAll('div');
     removeGrid.forEach((gridDiv) => gridDiv.remove());
 
-    if (parseInt(choice.value) >= 2 && parseInt(choice.value) <= 100) {
-        let size = document.querySelector('input').value;
-        setupGrid(size);    
+    if (choice >= 2 && choice <= 100) {
+        errorMsg.style.display = "none";
+        instructions.style.display = "none";
+        setupGrid(choice);    
     }
     else {
-        alert("SUCCESS");
+        errorMsg.style.display = "flex";
     }
   
 }
