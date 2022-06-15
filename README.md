@@ -11,3 +11,5 @@ Reflection for project:
 - Improved problem solving process with research, testing code and optimizing functions
 - Tried new methods of CSS styling with viewports and creating button animations
 - Looking forward to practicing responsive web design in future projects
+
+LIVE LINK: https://wongd92.github.io/Etch-A-Sketch/
